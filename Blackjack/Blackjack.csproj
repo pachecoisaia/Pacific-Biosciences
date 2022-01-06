@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE5E4A26-70DB-40A9-ABCB-F2164813AC7C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Blackjack</RootNamespace>
+    <AssemblyName>Blackjack</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ViewModel\Commands\HitCommand.cs" />
+    <Compile Include="ViewModel\Commands\StandCommand.cs" />
+    <Compile Include="ViewModel\DealerViewModel.cs" />
+    <Compile Include="ViewModel\PlayerViewModel.cs" />
+    <Compile Include="ViewModel\PlayViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="View\DealerBustedView.xaml.cs">
+      <DependentUpon>DealerBustedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DealerHit21View.xaml.cs">
+      <DependentUpon>DealerHit21View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DrawView.xaml.cs">
+      <DependentUpon>DrawView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoseView.xaml.cs">
+      <DependentUpon>LoseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainMenuView.xaml.cs">
+      <DependentUpon>MainMenuView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlayerBustedView.xaml.cs">
+      <DependentUpon>PlayerBustedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlayerHit21View.xaml.cs">
+      <DependentUpon>PlayerHit21View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlayView.xaml.cs">
+      <DependentUpon>PlayView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WinView.xaml.cs">
+      <DependentUpon>WinView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\DealerBustedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DealerHit21View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DrawView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainMenuView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlayerBustedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlayerHit21View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlayView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WinView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Card.cs" />
+    <Compile Include="Model\Deck.cs" />
+    <Compile Include="Model\Enums.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\background_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Model\Images\Club\10.png" />
+    <Resource Include="Model\Images\Club\2.png" />
+    <Resource Include="Model\Images\Club\3.png" />
+    <Resource Include="Model\Images\Club\4.png" />
+    <Resource Include="Model\Images\Club\5.png" />
+    <Resource Include="Model\Images\Club\6.png" />
+    <Resource Include="Model\Images\Club\7.png" />
+    <Resource Include="Model\Images\Club\8.png" />
+    <Resource Include="Model\Images\Club\9.png" />
+    <Resource Include="Model\Images\Club\A.png" />
+    <Resource Include="Model\Images\Club\J.png" />
+    <Resource Include="Model\Images\Club\K.png" />
+    <Resource Include="Model\Images\Club\Q.png" />
+    <Resource Include="Model\Images\Club\S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Model\Images\Diamond\10.png" />
+    <Resource Include="Model\Images\Diamond\2.png" />
+    <Resource Include="Model\Images\Diamond\3.png" />
+    <Resource Include="Model\Images\Diamond\4.png" />
+    <Resource Include="Model\Images\Diamond\5.png" />
+    <Resource Include="Model\Images\Diamond\6.png" />
+    <Resource Include="Model\Images\Diamond\7.png" />
+    <Resource Include="Model\Images\Diamond\8.png" />
+    <Resource Include="Model\Images\Diamond\9.png" />
+    <Resource Include="Model\Images\Diamond\A.png" />
+    <Resource Include="Model\Images\Diamond\J.png" />
+    <Resource Include="Model\Images\Diamond\K.png" />
+    <Resource Include="Model\Images\Diamond\Q.png" />
+    <Resource Include="Model\Images\Diamond\S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Model\Images\Heart\10.png" />
+    <Resource Include="Model\Images\Heart\2.png" />
+    <Resource Include="Model\Images\Heart\3.png" />
+    <Resource Include="Model\Images\Heart\4.png" />
+    <Resource Include="Model\Images\Heart\5.png" />
+    <Resource Include="Model\Images\Heart\6.png" />
+    <Resource Include="Model\Images\Heart\7.png" />
+    <Resource Include="Model\Images\Heart\8.png" />
+    <Resource Include="Model\Images\Heart\9.png" />
+    <Resource Include="Model\Images\Heart\A.png" />
+    <Resource Include="Model\Images\Heart\J.png" />
+    <Resource Include="Model\Images\Heart\K.png" />
+    <Resource Include="Model\Images\Heart\Q.png" />
+    <Resource Include="Model\Images\Heart\S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Model\Images\Spade\10.png" />
+    <Resource Include="Model\Images\Spade\2.png" />
+    <Resource Include="Model\Images\Spade\3.png" />
+    <Resource Include="Model\Images\Spade\4.png" />
+    <Resource Include="Model\Images\Spade\5.png" />
+    <Resource Include="Model\Images\Spade\6.png" />
+    <Resource Include="Model\Images\Spade\7.png" />
+    <Resource Include="Model\Images\Spade\8.png" />
+    <Resource Include="Model\Images\Spade\9.png" />
+    <Resource Include="Model\Images\Spade\A.png" />
+    <Resource Include="Model\Images\Spade\J.png" />
+    <Resource Include="Model\Images\Spade\K.png" />
+    <Resource Include="Model\Images\Spade\Q.png" />
+    <Resource Include="Model\Images\Spade\S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\background.png" />
+    <Resource Include="View\Images\blackjack.png" />
+    <Resource Include="View\Images\play.png" />
+    <Resource Include="View\Images\quit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\button_hit.png" />
+    <Resource Include="View\Images\button_stand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\dealer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\lost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\playerbusted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\lose_main_menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\button_next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\win.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\win_main_menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\dealerbusted.png" />
+    <Resource Include="View\Images\playerhit21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\dealerhit21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\draw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Images\draw_main_menu.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

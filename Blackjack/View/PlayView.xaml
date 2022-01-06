@@ -1,0 +1,121 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Blackjack.View"
+      xmlns:ViewModel="clr-namespace:Blackjack.ViewModel" x:Class="Blackjack.View.PlayView"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PlayView">
+	
+	<Grid>
+		<Image Source="Images/background.png" Stretch="Fill"/>
+		<Image Source="Images/table.png" VerticalAlignment="Top" Stretch="Fill"/>
+		<Image />
+		<Grid  VerticalAlignment="Top" HorizontalAlignment="Stretch"  Margin="0,60,0,20">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<Grid x:Name="DealerGrid" HorizontalAlignment="Center" Grid.Row="1">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<ListView Height="100" Background="Transparent" Grid.Column="0" Grid.Row="0" Margin="0,0,0,60" ItemsSource="{Binding DealerRevealedCards}" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalAlignment="Center" BorderBrush="Transparent">
+					<ListView.ItemsPanel>
+						<ItemsPanelTemplate>
+							<StackPanel Orientation="Horizontal"/>
+						</ItemsPanelTemplate>
+					</ListView.ItemsPanel>
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<Image Source="{Binding Front}" Width="50" Height="Auto" />
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+
+				<ListView x:Name="LvDealerHiddenCards" Height="100" Background="Transparent" Grid.Column="1" Grid.Row="0" Margin="0,0,0,60" ItemsSource="{Binding DealerHiddenCard}" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalAlignment="Center" BorderBrush="Transparent">
+					<ListView.ItemsPanel>
+						<ItemsPanelTemplate>
+							<StackPanel Orientation="Horizontal"/>
+						</ItemsPanelTemplate>
+					</ListView.ItemsPanel>
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<Image x:Name="ImageDealer" Source="{Binding Back}" Width="50" Height="Auto" />
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</Grid>
+		</Grid>
+		<Grid  VerticalAlignment="Bottom" HorizontalAlignment="Stretch"  Margin="0,0,0,20">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<ListView Height="100" Background="Transparent" Grid.Row="0" Margin="0,0,0,60" ItemsSource="{Binding PlayerCards}" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalAlignment="Center" BorderBrush="Transparent">
+				<ListView.ItemsPanel>
+					<ItemsPanelTemplate>
+						<StackPanel Orientation="Horizontal"/>
+					</ItemsPanelTemplate>
+				</ListView.ItemsPanel>
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<Image Source="{Binding Front}" Width="50" Height="Auto" />
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<Grid x:Name="ActionsGrid" HorizontalAlignment="Center" Grid.Row="1">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Button  x:Name="BtnHit" Command="{Binding HitCommand}" Click="BtnHit_Click" Visibility= "{Binding HitVisibility}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="Auto" Grid.Column="0" Background="Transparent" BorderBrush="Transparent">
+					<Image Source="Images/button_hit.png" Stretch="Uniform"/>
+				</Button>
+				<Button  x:Name="BtnStand" Command="{Binding StandCommand}" Visibility= "{Binding StandVisibility}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="Auto" Grid.Column="1" Background="Transparent" BorderBrush="Transparent">
+					<Image Source="Images/button_stand.png" Stretch="Uniform"/>
+				</Button>
+			</Grid>
+
+			<Grid x:Name="PageGrid" HorizontalAlignment="Center" Grid.Row="1">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Button  x:Name="BtnNext" Click="BtnNext_Click" Visibility= "{Binding NextVisibility}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="100" Height="Auto" Grid.Column="1" Background="Transparent" BorderBrush="Transparent">
+					<Image Source="Images/button_next.png" Stretch="Uniform"/>
+				</Button>
+			</Grid>
+		</Grid>
+		<Border Height="Auto" VerticalAlignment="Top" HorizontalAlignment="Center" Width="100">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+				<Image Source="Images/dealer.png" />
+				<TextBlock Text="Dealer" Foreground="White" FontSize="18" Margin="40,5,0,0" />
+			</Grid>
+		</Border>
+	</Grid>
+</Page>

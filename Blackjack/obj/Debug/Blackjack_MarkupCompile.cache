@@ -1,0 +1,20 @@
+﻿Blackjack
+
+
+winexe
+C#
+.cs
+C:\Users\Isaia\Dropbox\My PC (MSI)\Documents\PacBio\Blackjack\obj\Debug\
+Blackjack
+none
+false
+DEBUG;TRACE
+C:\Users\Isaia\Dropbox\My PC (MSI)\Documents\PacBio\Blackjack\App.xaml
+10-400083430
+
+23-1499301301
+13-1505183044
+MainWindow.xaml;View\DealerBustedView.xaml;View\DealerHit21View.xaml;View\DrawView.xaml;View\LoseView.xaml;View\MainMenuView.xaml;View\PlayerBustedView.xaml;View\PlayerHit21View.xaml;View\PlayView.xaml;View\WinView.xaml;
+
+False
+
